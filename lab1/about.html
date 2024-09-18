@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <style>
+      body {
+        display: flex;
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      nav {
+        width: 20%;
+        background-color: #f8f8f8;
+        padding: 20px;
+      }
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+      nav ul li {
+        margin: 10px 0;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: black;
+      }
+      nav ul li a:hover {
+        color: red;
+      }
+      .content {
+        width: 80%;
+        padding: 20px;
+      }
+      iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+      }
+      li.selected {
+        background-color: #b1191a; /* 选中的列表项背景颜色 */
+        color: white; /* 选中的列表项文字颜色，增加对比 */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 左侧导航栏 -->
+    <nav>
+      <ul id="myList">
+        <li>
+          <a href="privacy.html" target="contentFrame">京东隐私政策</a>
+        </li>
+        <li><a href="founder.html" target="contentFrame">企业创始人</a></li>
+      </ul>
+    </nav>
+
+    <!-- 右侧内容区域 -->
+    <div class="content">
+      <!-- 使用 iframe 来内嵌不同页面内容 -->
+      <iframe name="contentFrame" src="founder.html"></iframe>
+    </div>
+    <script>
+      document.getElementById("myList").addEventListener("click", function (e) {
+        if (e.target.tagName === "LI") {
+          // 移除所有li元素的selected类
+          Array.from(this.children).forEach((li) =>
+            li.classList.remove("selected")
+          );
+          // 添加selected类到被点击的li元素
+          e.target.classList.add("selected");
+        }
+      });
+    </script>
+  </body>
+</html>

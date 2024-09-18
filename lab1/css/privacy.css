@@ -1,0 +1,131 @@
+a,
+address,
+b,
+big,
+blockquote,
+body,
+center,
+cite,
+code,
+dd,
+del,
+div,
+dl,
+dt,
+em,
+fieldset,
+font,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+html,
+i,
+iframe,
+img,
+ins,
+label,
+legend,
+li,
+ol,
+p,
+pre,
+small,
+span,
+strong,
+u,
+ul,
+var {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font: 12px/150% tahoma, arial, Microsoft YaHei, Hiragino Sans GB,
+    "\u5b8b\u4f53", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #666;
+  background: #fff;
+}
+.main-title {
+  font-size: 32px;
+  color: #333;
+  font-weight: bold;
+}
+.sub-title {
+  font-size: 14px;
+  color: #999;
+  display: block;
+  line-height: 1.5;
+  font-weight: 400;
+}
+strong {
+  text-indent: 2em;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+}
+h2 {
+  font-size: 1.2em;
+  color: #333;
+}
+.highlight {
+  color: blue;
+  font-weight: bold;
+}
+.section {
+  font-weight: bold;
+  text-align: left;
+  text-indent: 2em;
+  line-height: 1.7;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+.contact-info {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+.list {
+  list-style-type: none;
+  color: rgb(102, 102, 102);
+  display: list-item;
+  text-align: left;
+  font-weight: 800;
+  font-size: 12px;
+}
+h6 {
+  display: block;
+  font-size: 0.67em;
+  margin-block-start: 2.33em;
+  margin-block-end: 2.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+.text-container {
+  /* 使用 .text-container 来选择 div 元素 */
+  border: 1px solid #ccc; /* 设置边框为1像素宽的灰色实线 */
+  padding: 25px 36px;
+  line-height: 1.5;
+  text-align: left;
+  overflow: hidden;
+  color: #666;
+}
+.big {
+  margin: 0 20%;
+}

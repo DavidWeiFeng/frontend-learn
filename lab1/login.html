@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>登录表单</title>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loginForm">
+      <h2>密码登录</h2>
+      <form>
+        <label for="username">账号名/手机号/邮箱:</label>
+        <input type="text" id="username" name="username" required /><br /><br />
+        <label for="password">密码:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+        <button type="submit">登录</button>
+      </form>
+    </div>
+
+    <div id="smsLoginForm" class="hidden">
+      <h2>短信登录</h2>
+      <form>
+        <label for="phone">手机号:</label>
+        <input type="text" id="phone" name="phone" required /><br /><br />
+        <label for="smsCode">验证码:</label>
+        <input type="text" id="smsCode" name="smsCode" required /><br /><br />
+        <button type="submit">登录</button>
+      </form>
+    </div>
+
+    <button onclick="toggleForms()">切换登录方式</button>
+
+    <script>
+      function toggleForms() {
+        var passwordLoginForm = document.getElementById("loginForm");
+        var smsLoginForm = document.getElementById("smsLoginForm");
+
+        if (passwordLoginForm.style.display === "none") {
+          passwordLoginForm.style.display = "block";
+          smsLoginForm.style.display = "none";
+        } else {
+          passwordLoginForm.style.display = "none";
+          smsLoginForm.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>
