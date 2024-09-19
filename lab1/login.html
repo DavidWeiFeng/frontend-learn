@@ -4,55 +4,81 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>登录表单</title>
+    <link rel="stylesheet" href="css/login.css" />
     <style>
       .hidden {
         display: none;
+      }
+      a {
+        text-decoration: none;
+      }
+      .loginbox {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+      }
+      .loginbox div {
+        cursor: pointer;
       }
     </style>
   </head>
   <body>
     <div id="loginForm">
-      <h2>密码登录</h2>
-      <form>
-        <label for="username">账号名/手机号/邮箱:</label>
-        <input type="text" id="username" name="username" required /><br /><br />
-        <label for="password">密码:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-        /><br /><br />
-        <button type="submit">登录</button>
-      </form>
-    </div>
+      <div class="loginbox">
+        <div id="passwordLoginBtn">密码登录</div>
+        <div id="smsLoginBtn">短信登录</div>
+      </div>
 
-    <div id="smsLoginForm" class="hidden">
-      <h2>短信登录</h2>
-      <form>
-        <label for="phone">手机号:</label>
-        <input type="text" id="phone" name="phone" required /><br /><br />
-        <label for="smsCode">验证码:</label>
-        <input type="text" id="smsCode" name="smsCode" required /><br /><br />
-        <button type="submit">登录</button>
-      </form>
-    </div>
+      <!-- 密码登录表单 -->
+      <div id="passwordLoginForm">
+        <form>
+          <div class="logininput">
+            <input type="text" id="username" name="username" placeholder="账号名/手机号/邮箱" required />
+            <input type="password" id="password" name="password" placeholder="密码" required />
+            <div style="width: 500px;" class="test">
+              <a href="https://aq.jd.com/process/findPwd?s=1">忘记密码</a><br />
+            </div>
+            <button type="submit">登录</button><br />
+            <div style="width: 500px;" class="test">
+              <a href="https://reg.jd.com/p/regPage?ignore=1">立刻注册</a><br />
+            </div>
+          </div>
+        </form>
+      </div>
 
-    <button onclick="toggleForms()">切换登录方式</button>
+      <!-- 短信登录表单 -->
+      <div id="smsLoginForm" class="hidden">
+        <form>
+          <div class="logininput">
+            <input type="text" id="phone" name="phone" placeholder="请输入手机号" required /><br /><br />
+            <input type="text" id="smsCode" name="smsCode" placeholder="请输入验证码" required /><br /><br />
+            <button type="submit">登录</button>
+          </div>
+        </form>
+      </div>
+    </div>
 
     <script>
-      function toggleForms() {
-        var passwordLoginForm = document.getElementById("loginForm");
-        var smsLoginForm = document.getElementById("smsLoginForm");
+      // 获取表单元素
+      const passwordLoginBtn = document.getElementById('passwordLoginBtn');
+      const smsLoginBtn = document.getElementById('smsLoginBtn');
+      const passwordLoginForm = document.getElementById('passwordLoginForm');
+      const smsLoginForm = document.getElementById('smsLoginForm');
 
-        if (passwordLoginForm.style.display === "none") {
-          passwordLoginForm.style.display = "block";
-          smsLoginForm.style.display = "none";
-        } else {
-          passwordLoginForm.style.display = "none";
-          smsLoginForm.style.display = "block";
-        }
-      }
+      // 点击密码登录按钮时显示密码登录表单
+      passwordLoginBtn.addEventListener('click', function() {
+        passwordLoginForm.style.display = 'block';
+        smsLoginForm.style.display = 'none';
+      });
+
+      // 点击短信登录按钮时显示短信登录表单
+      smsLoginBtn.addEventListener('click', function() {
+        smsLoginForm.style.display = 'block';
+        passwordLoginForm.style.display = 'none';
+      });
+
+      // 默认显示密码登录表单
+      passwordLoginForm.style.display = 'block';
     </script>
   </body>
 </html>
